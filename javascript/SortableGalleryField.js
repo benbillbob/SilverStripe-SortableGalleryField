@@ -5,8 +5,8 @@
 				onmatch: function() {
 					// enable sorting functionality
 					var self = $(this);
-					
-					self.sortable({ 
+
+					self.sortable({
 						handle: ".ss-uploadfield-item-preview",
 						axis: "y",
 						start: function(event, ui){
@@ -19,18 +19,18 @@
 							self.css("overflow", "auto");
 						},
 						update: function(event, ui){
-							
+
 							formID = $("#Form_EditForm_ID").val();
 							url = 'GalleryImageController/Sort/';
-							$.get(url, { 
-								newPosition: (ui.item.index()), 
-								oldPosition: ui.item.data("oldPosition"), 
-								pageID: formID 
-							}, function(data, status){								
-								
+							$.get(url, {
+								newPosition: (ui.item.index()),
+								oldPosition: ui.item.data("oldPosition"),
+								pageID: formID
+							}, function(data, status){
+
 							});
-							
-							
+
+
 						}
 					});
 					this._super();
