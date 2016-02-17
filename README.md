@@ -17,17 +17,17 @@ SAMPLE USAGE
 
 	<?php
 	class GalleryPage extends Page {
-		
-		static $has_many = array(  	 	
-			'Images' => 'Image'  
+
+		static $has_many = array(
+			'Images' => 'Image'
 		);
-		
+
 		function getCMSFields() {
 			$fields = parent::getCMSFields();
-			
-			$f = new SortableGalleryField('Images', 'My Images'); 
+
+			$f = new SortableGalleryField('Images', 'My Images');
 			$fields->addFieldToTab('Root.Images', $f);
-			
+
 			return $fields;
 		}
 	}
