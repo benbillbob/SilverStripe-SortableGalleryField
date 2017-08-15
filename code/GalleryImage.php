@@ -5,6 +5,7 @@ class GalleryImage extends DataExtension {
 
     private static $db = array(
         'Description' => 'Text',
+        'HTMLLink' => 'Text',
 		'SortOrder' => 'Int'
     );
 
@@ -16,7 +17,8 @@ class GalleryImage extends DataExtension {
 
 		$fields->addFieldsToTab('Root.Main',
 			array(
-				new TextareaField("Description")
+				new TextareaField("Description"),
+				new TextField("HTMLLink")
 			)
 		);
 
